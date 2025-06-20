@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            Find Even or Odd
+        </title>
+    </head>
+    <body>
+        <input id="input" type="number" placeholder="enter...."/>
+        <button onclick="OddEven()">Find</button>
+        <ul id="output"></ul>
+        <script>
+            const input = document.getElementById('input');
+            const output = document.getElementById('output');
+
+            function OddEven(){
+                const value = Number(input.value);
+                if(isNaN(value)){
+                    output.innerHTML = "";
+                    return;
+                }
+            
+            if(value % 2 === 0){
+                output.innerHTML ="<li>Even</li>";
+            }else{
+                output.innerHTML ="<li>Odd</li>";
+            }
+           
+            }
+        </script>
+
+        <input type="text" placeholder="enter the string" id="input-string"/>
+        <button onclick="display()">Click</button>
+        <p id="outputdisplay"></p>
+        <script>
+         const inputs = document.getElementById('input-string');
+
+         const outputs = document.getElementById('outputdisplay');
+    
+
+         function display(){
+            const value = inputs.value;
+            const reversed = value.split("").reverse().join("");
+            outputs.textContent = reversed;
+         
+         }
+        
+        </script>
+    </body>
+</html>

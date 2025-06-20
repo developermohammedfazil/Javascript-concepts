@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>list of items</title>
+    </head>
+    <body>
+        <button onclick="showlist()">show fruits</button>
+        <button onclick="clearlist()">clear list</button>
+        <ul id="fruitlist"></ul>
+        <script>
+             const fruits = ["Apple", "Banana", "Mango"];
+
+          function showlist(){
+            const list = document.getElementById('fruitlist');
+
+           list.innerHTML = "";
+
+           fruits.forEach(fruit =>{
+                const li = document.createElement('li');
+                li.textContent = fruit;
+                list.appendChild(li);
+             });
+
+          }
+          function clearlist(){
+            document.getElementById('fruitlist').innerHTML="";
+          }
+        </script>
+    
+    ✅ Task 2: Delete Item by Index
+
+   <h1>My list</h1>
+   <ul id="list"></ul>
+
+   <input type="number" id="indexInput" placeholder="Enter index to delete" />
+
+   <button onclick="deleteByindex()">delete</button>
+
+   <script>
+    let items = ["fazil","buvan","mani","kaviya","srujana","anitha"];
+
+    function renderlist(){
+        const list =document.getElementById('list');
+        list.innerHTML = "";
+        items.forEach((item , index)=>{
+            const li = document.createElement('li');
+            li.textContent = index+" . "+ item ;
+            list.appendChild(li);
+        })
+    }
+
+    function deleteByindex(){
+        const index =parseInt(document.getElementById("indexInput").value);
+        if(index >=0 && index < items.length){
+        items.splice(index, 1);
+        renderlist();
+        }else{
+        alert("invalid");
+      }  
+    }
+    renderlist();
+   </script>
+
+   //Mark Item as Done Input + Add Task
+   <h1>Todo list</h1>
+
+   <input type="text" id="taskInput" placeholder="enter a task"/>
+   <button onclick="addTask()">Add Task</button>
+
+   <ul id="taskList"></ul>
+
+   <script>
+   function addTask(){
+     const input =document.getElementById("taskInput");
+     const tasktext = input.value.trim();
+   
+   if(tasktext !== ""){
+    const li = document.createElement('li');
+   li.textContent = tasktext;
+
+   li.addEventListener("click",()=>{
+    if(li.style.textDecoration === "line-through"){
+      li.style.textDecoration = "none";
+    } else{
+      li.style.textDecoration = "line-through";
+    }
+   });
+   document.getElementById("taskList").appendChild(li);
+   input.value ="";
+
+   }
+   else{
+    alert('invalid');
+   }
+  }
+
+   </script>
+    </body>
+</html>

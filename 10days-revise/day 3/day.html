@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Array Thinking + Build from Scratch</title>
+    </head>
+    <body>
+
+        <button onclick="searchfn()">Search</button>
+        <ul id="display-output"></ul>
+
+        <script>
+            const names = ["Ali", "Ravi", "Asha", "Kiran", "Arun","hello","Hari",];
+        
+           function searchfn(){
+            const filtered = names.filter(name => name.startsWith("A"));
+
+            const output = document.getElementById('display-output');
+            
+            output.innerHTML ="";
+             
+           filtered.forEach(name=>{
+            const li = document.createElement('li');
+            li.textContent = name;
+            output.appendChild(li);
+           }) ;
+        }
+        </script>
+
+       <input id="Search-input" type="text" oninput="filterNames()" placeholder="Search here...">
+       <ul id="result-list"></ul>
+      <script>
+         const persons= ["Arun", "Aisha", "John", "Priya", "Arjun", "Kiran", "Sara"];
+         const result = document.getElementById('result-list');
+
+         function filterNames(){
+            const searchterm = document.getElementById('Search-input').value.toLowerCase();
+            result.innerHTML = "";
+
+            const filtered = persons.filter(person=>person.toLowerCase().includes(searchterm)
+        );
+        filtered.forEach(person =>{
+            const li = document.createElement('li');
+            li.textContent = person ;
+            result.appendChild(li);
+        });
+         }
+         filterNames();
+      </script>
+
+      <input id="input-box" type="text" placeholder="enter your input... "/>
+      <button onclick="additem()">Add</button>
+      <ul id="displayitem"></ul>
+
+      <script>
+
+        let items =[];
+
+        function additem(){
+            const inputItem = document.getElementById('input-box');
+            const value = inputItem.value.trim();
+
+            if(value !==""){
+                items.push(value);
+                inputItem.value ="";
+                renderlist();
+            }
+        }
+        function deleteitem(index){
+            items.splice(index, 1);
+            renderlist();
+        }
+        function renderlist(){
+            const itemlist =document.getElementById('displayitem');
+            itemlist.innerHTML = "";
+
+            items.forEach((item,index)=>{
+                const li = document.createElement('li');
+                li.innerHTML =` ${item} <button onclick="deleteitem(${index})">Delete</button>` ; 
+                itemlist.appendChild(li);  
+            });
+        }
+        
+
+
+
+
+      </script>
+    </body>
+</html>

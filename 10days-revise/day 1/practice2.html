@@ -1,0 +1,33 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="text" id="input" placeholder="Enter task"/>
+        <button onclick="addInput()">add</button>
+      
+        <script>
+
+           function TodoApp()
+           {
+            const inputBox = document.getElementById('input');
+           const value = inputBox.value;
+           
+           function addInput(){
+            li.innerHTML+= inputBox.value +"<br>";
+           }
+
+           const li = document.createElement('li');
+           li.value = value;
+
+           const DeleteBtn = document.createElement('button');
+            DeleteBtn.textContent="delete";
+            DeleteBtn.onclick = function(){
+            li.remove();
+            }
+            
+           }              
+
+        </script>
+    </body>
+</html>

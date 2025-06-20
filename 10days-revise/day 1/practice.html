@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input id="inputs" type="text" placeholder="enter here"/>
+        <button id="btn" onclick="btn()">submit</button>
+        <p id="demo"> </p>
+        <input id="input-field" type="text" placeholder="enter here"/>
+        <button id="Btn">add</button>
+        <p id="demo"> </p>
+        <script>
+          
+           const output = document.getElementById('demo');
+              const btn = document.getElementById('btn');   
+              
+           function btn()
+           {
+            const userinput = document.getElementById('inputs').value;
+
+             output.innerHTML += userinput 
+             +"<br>";
+             console.log(output);
+           } 
+
+
+// Todo List (Simple)
+// Input field + button
+
+// On click, add the input as a list item
+
+// Each item should have a "Delete" button to remove it
+       const inputs = document.getElementById('input-field');
+        const addBtn = document.getElementById('Btn');
+       
+
+           
+           
+        </script>   
+    </body>
+</html>

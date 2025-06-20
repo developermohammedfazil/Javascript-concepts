@@ -1,0 +1,17 @@
+<button id="clickBtn">Click Me</button>
+<p id="countDisplay" >Clicked: 0 times</p>
+
+<script>
+    function createCounter(){
+        let count = 0;   // This variable is remembered by the inner function
+    
+    return function(){
+        count++;
+        console.log(count);
+        document.getElementById("countDisplay").textContent =`Clicked: ${count} times`; 
+    };
+ }
+ const button = document.getElementById("clickBtn");
+ const counter = createCounter();
+ button.addEventListener("click", counter);  // Closure keeps track of `count`
+</script>

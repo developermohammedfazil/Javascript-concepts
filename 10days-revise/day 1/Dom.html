@@ -1,0 +1,26 @@
+<html>
+    <head></head>
+    <body>
+        <h1 id="main"><strong>hello</strong></h1>
+        <h1 class="section">hi</h1>
+        <input type="text" id="username"/>
+        <button id="btn">click here</button>
+        <button id="Btn" onclick="Btn()">click</button>
+         <script>
+            const dom = document.getElementById('main');//id
+            const clas = document.querySelector('.section');//class
+            const user = document.getElementById('username').value;
+            btn.addEventListener("click",()=>{
+            alert("button clicked");
+        });
+           function Btn(){
+            alert('helooo broo');
+           }
+            console.log(dom.innerText);//text only
+            console.log(dom.innerHTML);//print the tags also
+            console.log(clas.innerText);
+            clas.style.background ="red";
+
+         </script>
+    </body>
+</html>

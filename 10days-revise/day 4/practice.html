@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title> Like Button Toggle</title>
+    </head>
+    <body>
+        <button id="likeBtn">🤍</button>
+        <script>
+            let isLiked = false ;
+            const likeBtn = document.getElementById('likeBtn');
+            likeBtn.addEventListener('click',()=>{
+                isLiked =!isLiked;
+
+                if(isLiked){
+                    likeBtn.textContent ="❤️";
+                    likeBtn.classList.add("liked");
+                }else{
+                    likeBtn.textContent="🤍";
+                    likeBtn.classList.add("liked");
+                }
+            });
+        </script>
+
+
+    // simple Counter App 
+    <label id="labelinput">0</label>
+    <button onclick="increasebtn()">➕ </button>
+    <button onclick="reset()">🔁</button>
+    <button onclick="decreasebtn()">➖</button>
+
+    <script>
+        let count = 0;
+        const label = document.getElementById('labelinput');
+        
+        function update(){
+            label.textContent = count ;
+        }
+        function increasebtn(){
+            count++;
+            update();
+        }
+
+      function reset(){
+        count = 0;
+        update();
+      }
+      function decreasebtn(){
+        count--;
+        update();
+      }
+    </script>
+    </body>
+</html> 

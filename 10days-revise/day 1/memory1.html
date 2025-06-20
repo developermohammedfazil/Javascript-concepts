@@ -1,0 +1,65 @@
+<html>
+    <head>
+    </head>
+    <body> 
+        <button id="btn" onclick="counterfn()">click</button>
+        <lu id="demo">0</lu>
+        <script>
+          const counter = document.getElementById('demo');
+          count = 0;
+
+          function counterfn(){
+            count++;
+            counter.innerText = count ;
+            counter.textContent = count;
+
+          }
+        </script>
+   <input type="text" id="input" placeholder="type here"/>
+      <button id="Btn" onclick="display()">Submit</button>
+      <p id="output"></p>
+      <script>
+
+        const inputmsg = document.getElementById('input');
+        const outputmsg = document.getElementById('output');
+        function display(){
+          outputmsg.innerText = inputmsg.value;
+        }
+
+      </script>
+
+<h1>TODO LIST</h1>
+<input type="text" placeholder="type....." id="inputlist" />
+<button id="BTN" onclick="addTodo()">Submit</button>
+
+<ul id="todoList"></ul>
+
+<script>
+  function addTodo() {
+    const inputTag = document.getElementById('inputlist');
+    const value = inputTag.value.trim();
+
+    if (value === "") {
+      alert("Please enter a task");
+      return;
+    }
+
+    const li = document.createElement('li');
+    li.textContent = value;
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = "Delete";
+    deleteBtn.onclick = function () {
+      li.remove();
+    };
+
+    li.appendChild(deleteBtn);
+
+    document.getElementById('todoList').appendChild(li);
+
+    inputTag.value = ""; // Clear input field
+  }
+</script>
+
+    </body>
+</html>

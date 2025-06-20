@@ -1,0 +1,19 @@
+//✅ Improves performance (fewer event listeners)
+//✅ Handles dynamically added elements
+//✅ Reduces memory usage
+
+//Event Delegation is a technique where a parent element handles events for its child elements.
+
+<ul id="ParentList">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ul>
+ 
+<script>
+    document.getElementById("ParentList").addEventListener("click" , function(event){
+        if(event.target.tagName === "LI"){
+            alert("you clicked:"+ event.target.textContent);
+        }
+    });
+</script>

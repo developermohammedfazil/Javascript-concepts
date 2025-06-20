@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>
+            Show Items from Array on Button Click
+       </title>
+    </head>
+    <body>
+        <button onclick="displaybtn()">Click</button>
+        <ul id="displayinput"></ul>
+        <script>
+
+            const fruits = ["Apple", "Banana", "Mango"]; 
+            function displaybtn(){
+             const ul = document.getElementById('displayinput');
+             ul.innerHTML ="";
+
+             fruits.forEach(fruit =>{
+                const li = document.createElement('li');
+                li.textContent = fruit ;
+                ul.appendChild(li);
+             });
+            }
+           
+        </script>
+        <input id="input-feild" type="text" placeholder="enter index to delete">
+        <button onclick="deletefn()">Delete</button>
+        <ul id="displaylist"></ul>
+
+        <script>
+            let names = ["Ali", "Ravi", "Sara"];
+          
+            function renderlist(){
+                const ul = document.getElementById('displayinput');
+                ul.innerHTML = "";
+
+            names.forEach(function(name , index){
+               const li = document.createElement('li');
+               li.textContent =index+". "+ name;
+               ul.appendChild(li);
+            });
+         }
+         renderlist();
+
+         function deletefn(){
+            const input = document.getElementById('input-feild');
+            const index =parseInt(input.value);
+
+            if(index >= 0 && index < names.length){
+                names.splice(index, 1);
+                renderlist();
+            }else{
+                alert('invalid');
+            }
+            input.value ="";
+         }
+        </script>
+
+        <input type="text" placeholder="enter here..." id="inputs"/>
+
+        <button onclick="submitBtn()">submit</button>
+
+        <ul id="output-display"></ul>
+
+        <script>
+        function submitBtn(){
+
+        const input = document.getElementById('inputs');
+        const value = input.value.trim();
+
+        const outputs = document.getElementById('output-display');
+
+        if(value === ""){
+            alert('enter the task');
+            return;
+        }
+        const li = document.createElement('li');
+        li.textContent = value;
+      
+
+        li.addEventListener("click", ()=>{
+        
+            if(li.style.textDecoration === "line-through"){
+                li.style.textDecoration = "none";  
+            }else {
+          li.style.textDecoration = "line-through";
+           }
+        })
+        document.getElementById('output-display').appendChild(li);
+      input.value ="";
+    }           
+        </script>
+
+    </body>
+    
+</html>

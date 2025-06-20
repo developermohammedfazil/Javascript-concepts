@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #cart-items {
+      margin-top: 20px;
+    }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      max-width: 300px;
+    }
+    .item span {
+      flex-grow: 1;
+    }
+    button {
+      cursor: pointer;
+    }
+    #total {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🛒 Simple Cart</h2>
+  <input type="text" id="product-input" placeholder="Enter product name" />
+  <button onclick="addProduct()">Add</button>
+
+  <div id="cart-items"></div>
+  <p id="total">Total items: 0</p>
+
+  <script>
+    const productInput = document.getElementById('product-input');
+    const cartItems = document.getElementById('cart-items');
+    const totalDisplay = document.getElementById('total');
+
+    let Cart =[];
+
+    function updateCartDisplay(){
+            cartItems.innerHTML ='';
+            cart.forEach((product, index)=>{
+                const item = document.createElement('div');
+            item.className = 'item';
+
+            const name = document.createElement('span');
+            name.textContent = product; 
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Remove';
+            removeBtn.onclick =() => removeProduct(index);
+
+            item.appendChild(name);
+            item.appendChild(removeBtn);
+            cartItems.appendChild(item);
+        });
+    }
+
+    function addProduct(){
+        const productName = productInput.value.trim();
+        if(productName === "") 
+        return;
+
+        Cart.push(productName);
+        productInput.value ='';
+    }
+    function removeProduct(index){
+        cart.splice(index, 1);
+    }   
+  </script>
+
+</body>
+</html>
