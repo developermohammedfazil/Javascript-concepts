@@ -172,3 +172,30 @@ function factorialNum(n){
     const findfilter = filternum.filter(element => element >5);
 
     console.log(findfilter);
+
+    //Reverse a Number
+    const reverseNumbe = (N) =>{
+        return parseInt(N.toString().split("").reverse().join(''));
+    };
+    console.log(reverseNumbe(123));
+
+    //Capitalize First Letter of Each Word
+
+    const capwords =(strings) =>{
+        return strings.split(" ").map((word) => word[0].toUpperCase() + word.slice(1)).join(" ");
+    };
+    console.log(capwords("hello baby how are you"));
+
+ //Find Second Largest Number
+ const findSecLargNum =[10,20,5,40];
+findSecLargNum.sort((a,b) => b - a);
+console.log("SecondLargNumber : " , findSecLargNum[1]);
+
+const countChar = (Names) =>{
+    let count = {};
+    for(let char of Names){
+        count[char] = count[char] ? count[char]+1 : 1;
+    }
+    return count;
+}
+console.log(countChar("mohammedfazil"));
